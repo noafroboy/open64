@@ -70,7 +70,8 @@
 #include "ipaa.h"               // IPAA_NODE_INFO
 #include "config_ipa.h"         // IPA_Enable_* flags
 #include "ipa_lno_util.h"	// Utility routines
-#include "ipa_cost.h"		// Execution cost analysis 
+#include "ipa_cost.h"		// Execution cost analysis
+#include "ipa_options_compat.h"
 
 // IPA_array_prop_pool and Trace_IPA_Sections migrated to
 // g_ipa_ctx->array_section (ipa_context.h).

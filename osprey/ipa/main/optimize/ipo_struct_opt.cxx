@@ -47,6 +47,7 @@
 #include "tracing.h"
 #include "ipa_option.h" // Trace_IPA
 #include "lwn_util.h"
+#include "ipa_options_compat.h"
 
 // ======================================================================
 // Implements a form of structure splitting.

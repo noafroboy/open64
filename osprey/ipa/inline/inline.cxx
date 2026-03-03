@@ -123,6 +123,7 @@
 #endif
 
 #include "timelib.h"
+#include "ipa_options_compat.h"
 
 // temporary placeholder until feedback is fixed
 // BOOL FB_PU_Has_Feedback = FALSE;

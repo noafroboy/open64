@@ -71,6 +71,7 @@
 #include "clone.h"
 #include "ipo_clone.h"
 #include "ipo_across_file_utils.h"
+#include "ipa_options_compat.h"
 
 //------------------------------------------------------------
 // initialize the mappings

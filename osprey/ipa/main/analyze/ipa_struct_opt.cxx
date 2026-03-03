@@ -37,6 +37,7 @@
 #include "ipa_struct_opt.h"
 #include "tracing.h"
 #include "ipa_option.h" // Trace_IPA
+#include "ipa_options_compat.h"
 
 // Struct-opt globals migrated to g_ipa_ctx->struct_opt (ipa_context.h).
 // Macros in ipa_struct_opt.h provide backward-compatible names.

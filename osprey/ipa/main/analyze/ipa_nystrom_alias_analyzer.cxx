@@ -40,6 +40,7 @@
 #include "ir_reader.h"
 #include "ipa_chg.h"
 #include "demangle.h"
+#include "ipa_options_compat.h"
 
 IPA_NystromAliasAnalyzer *IPA_NystromAliasAnalyzer::_ipa_naa = NULL;
 

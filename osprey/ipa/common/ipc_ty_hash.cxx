@@ -72,6 +72,8 @@ static const TY* ty_to_be_inserted;
 using __gnu_cxx::hash_map;
 extern hash_map <STR_IDX, TY_INDEX, __new_hash::hash<STR_IDX>, std::equal_to<STR_IDX> > struct_by_name_idx;
 
+#include "ipa_options_compat.h"
+
 static inline TY_IDX
 Get_Kid_TY_IDX (TY_IDX ty_idx)
 {

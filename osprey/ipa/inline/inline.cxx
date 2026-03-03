@@ -123,6 +123,7 @@
 #endif
 
 #include "timelib.h"
+#include "ipa_options_compat.h"
 
 // temporary placeholder until feedback is fixed
 // BOOL FB_PU_Has_Feedback = FALSE;
@@ -1091,6 +1092,7 @@ Inliner(char* input_name, char* output_name, INL_SKIPLST& filter)
 
    
     Initialize_Symbol_Tables(FALSE);
+    IPA_Context_Alloc();
 
     New_Scope (GLOBAL_SYMTAB, Malloc_Mem_Pool, FALSE);
 

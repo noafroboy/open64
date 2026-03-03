@@ -74,6 +74,7 @@
 #include "ipo_defs.h"                   // Parent_Map
 
 #include "ipo_clone.h"
+#include "ipa_options_compat.h"
 
 //----------------------------------------------------------------------  
 // Interface for the main IPA

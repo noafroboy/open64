@@ -100,12 +100,13 @@
 #include "ipl_main.h"
 #include "ipl_summarize_template.h" // put these two template files
 #include "ipl_analyze_template.h"   // last in the include list
-#include "ipl_cost_template.h" 	    // execution cost analysis 
+#include "ipl_cost_template.h" 	    // execution cost analysis
 #include "ipl_outline.h"	    // outline analysis
-#include "wb_ipl.h" 
+#include "wb_ipl.h"
 #include "ipa_section_main.h" 	    // utilities
 #include "ipl_elfsym.h"		    // for IPL_Write_Elf_Symtab
 #include "../local/init.cxx"        // force include of Ipl_Initializer
+#include "ipa_options_compat.h"
 
 /* General progress trace: */
 BOOL Trace_IPA = FALSE;

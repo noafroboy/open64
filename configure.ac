@@ -44,20 +44,6 @@ AC_CANONICAL_TARGET
 #AC_PROG_CXX
 #AC_PROG_RANLIB
 
-# There are known bugs when building the compiler in 64 bit mode on x86 so,
-# unless the user specifies otherwise, we default to 32 bit mode as the
-# default on x86 64 bit platforms.
-
-if test "$build_alias" = "" && test "$host_alias" = "" && test "$host_cpu" = "x86_64"; then
-  host_cpu=i686
-  host=$host_cpu-$host_vendor-$host_os
-fi
-
-if test "$build_alias" = "" && test "$target_alias" = "" && test "$target_cpu" = "x86_64"; then
-  target_cpu=i686
-  target=$target_cpu-$target_vendor-$target_os
-fi
-
 AC_ARG_WITH(build-compiler,
 [  --with-build-compiler=GNU|OSP	Use GNU or OSP compilers in build],
 BUILD_COMPILER="$with_build_compiler",
@@ -161,6 +147,14 @@ AC_ARG_ENABLE([fortran],
 
 AS_IF([test "x$enable_fortran" != "xno"], [
   BUILD_FORTRAN=YES
+])
+
+# Set whether to build the Java Frontend (JFE) and js2mpl
+AC_ARG_ENABLE([jfe],
+  AS_HELP_STRING([--disable-jfe], [Disable Java Frontend (JFE) and js2mpl (requires gradle, openjdk-8, cmake)]))
+
+AS_IF([test "x$enable_jfe" != "xno"], [
+  BUILD_JFE=YES
 ])
 
 # Set whether WHIRL a node contains a debugging ID
@@ -463,6 +457,7 @@ AC_SUBST([COMPILER_TARG_DIR])
 AC_SUBST([TARG_INFO_NAME])
 AC_SUBST([BUILD_GNU3])
 AC_SUBST([BUILD_FORTRAN])
+AC_SUBST([BUILD_JFE])
 AC_SUBST([WHIRL_HAS_ID_FIELD])
 AC_SUBST([BUILD_SKIP_IPA])
 AC_SUBST([BUILD_TYPE])
@@ -632,8 +627,10 @@ AC_CONFIG_SUBDIRS(binutils)
 AC_OUTPUT
 
 #
-# Starting JFE Checks
+# Starting JFE Checks (only when --enable-jfe or default)
 #
+
+if @<:@ "x$enable_jfe" != "xno" @:>@; then
 
 ISRUNNABLE_JFE=1
 printf "checking whether gradle works "
@@ -706,6 +703,10 @@ echo "            JAVA_HOME = $JAVA_HOME"
 if @<:@ $ISRUNNABLE_JFE = 0 @:>@
 then
 	exit 1
+fi
+
+else
+echo "JFE build disabled (use --enable-jfe to enable)"
 fi
 
 printf "checking CLANG_HOME is set ..."

@@ -77,6 +77,7 @@
 
 #include "ipo_inline.h"
 #include "ipa_nystrom_alias_analyzer.h"
+#include "ipa_options_compat.h"
 static INT initial_initv_tab_size;
 
 MEM_POOL Ipo_mem_pool;

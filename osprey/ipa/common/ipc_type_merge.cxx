@@ -56,6 +56,8 @@ using __gnu_cxx::hash_set;
 using __gnu_cxx::hash_map;
 using __gnu_cxx::hash_multimap;
 
+#include "ipa_options_compat.h"
+
 // For every struct type, this table maps its name to its TY index
 hash_map <STR_IDX, TY_INDEX, __new_hash::hash<STR_IDX>, std::equal_to<STR_IDX> > struct_by_name_idx;
 

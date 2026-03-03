@@ -49,13 +49,14 @@
 #include "mempool.h"            // MEM_POOL
 #include "config_ipa.h"	        // IPA_Enable_* flags
 #include "ipa_cg.h"             // IPA_NODE, IPA_Call_Graph
-#include "ipaa.h"		// IPAA_NODE_INFO 
+#include "ipaa.h"		// IPAA_NODE_INFO
 #include "ipa_section_annot.h"  // array section classes
 #include "ipa_section_main.h"   // Init_IPA_Print_Arrays
 #include "ipa_section_prop.h"   // Trace_IPA_Sections
 #include "ipa_reshape.h"        // RESHAPE
 #include "reshape.h"            // RESHAPE
-#include "ipa_cost.h" 		// Execution cost 
+#include "ipa_cost.h" 		// Execution cost
+#include "ipa_options_compat.h"
 
 // ==========================================================
 // ==========================================================
